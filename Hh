@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Kiss Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9c6e7;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #yes {
+            background-color: #ff7eb3;
+            color: white;
+        }
+        #no {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you give me a kiss? 😘</h1>
+        <button id="yes" onclick="kissMe()">Yes</button>
+        <button id="no" onclick="moveNo()">No</button>
+    </div>
+    <script>
+        const noButton = document.getElementById("no");
+
+        function kissMe() {
+            alert("Yay! You kissed me! ❤️");
+        }
+
+        function moveNo() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noButton.style.position = "absolute";
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
